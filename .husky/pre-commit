@@ -1,0 +1,12 @@
+changes=1
+[ -z "`git diff`" ] && changes=0
+[ $changes -eq 1 ] && git stash push -uqk -m "Pre-commit hook stash" src/
+
+rm -rf dist/*
+yarn prod
+git add -A -- dist/
+
+if [[ $changes -eq 1 ]]
+then
+  git stash pop
+fi
