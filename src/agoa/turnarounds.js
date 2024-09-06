@@ -1,13 +1,11 @@
 export default function processAgoa(subdomain = 'admin') {
-  function tick() {
+  function addClickHandlers() {
     Array.from(
-      document.querySelectorAll(
-        '[id^="turnaroundDetailHeaderTurnaroundActualAirport"]'
-      )
+      document.querySelectorAll('[id^="TurnaroundPathAirportsHubActual"]')
     ).forEach(turnaround => {
       if (!turnaround.dataset.processed) {
         const id = turnaround.id.match(
-          /turnaroundDetailHeaderTurnaroundActualAirport([0-9]+)/
+          /TurnaroundPathAirportsHubActual([0-9]+)/
         )[1];
         turnaround.addEventListener('click', () => {
           window.open(
@@ -21,7 +19,18 @@ export default function processAgoa(subdomain = 'admin') {
     });
   }
 
-  setInterval(tick, 1000);
+  function listenDOMChanges() {
+    new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (mutation.addedNodes.length) {
+          addClickHandlers();
+        }
+      });
+    }).observe(document.body, {childList: true, subtree: true});
+  }
+
+  addClickHandlers();
+  listenDOMChanges();
 
   console.log('[TT Userscript] Module loaded');
 }
