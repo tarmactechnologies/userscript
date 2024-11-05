@@ -16,7 +16,7 @@ function processAdminPartnerTaskRulesAirlines() {
       if (!airline) continue;
 
       const option = Array.from(select.options).find(
-        option => option.label.substring(1, 3) === airline
+        option => option.label.substring(0, 2) === airline
       );
       if (option === undefined) {
         console.warn(`[TT Userscript] Cound not find airline ${airline}`);
@@ -29,7 +29,7 @@ function processAdminPartnerTaskRulesAirlines() {
   label.addEventListener('click', () => {
     const airlines = Array.from(select.options)
       .filter(option => option.selected)
-      .map(option => option.label.substring(1, 3));
+      .map(option => option.label.substring(0, 2));
 
     const popup = window.open('', '', 'width=400, height=400');
     popup.document.title = `${information_code} | Airlines`;
