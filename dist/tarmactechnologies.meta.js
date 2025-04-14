@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tarmac Technologies
-// @version      3.1.0
-// @author       Victor Colomb
+// @version      3.1.2
+// @author       Tarmac Technologies
 // @description  Miscellaneous Tarmac Technologies Utilities
 // @icon         https://static-tarmac.s3.amazonaws.com/img/favicon.ico
 // @downloadURL  https://github.com/tarmactechnologies/userscript/raw/main/dist/tarmactechnologies.user.js

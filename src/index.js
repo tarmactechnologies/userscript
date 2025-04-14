@@ -36,7 +36,6 @@ import backofficeUsers from './backoffice/users';
     }
 
     if (/^\/tarmac\/partnertaskrule\/(?:add|[0-9]+\/change)/.test(pathname)) {
-      console.log('hear hear');
       adminPartnerTaskRules();
     }
   }

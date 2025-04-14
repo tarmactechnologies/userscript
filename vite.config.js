@@ -6,9 +6,6 @@ export default defineConfig((config) => {
     build: {
       minify: 'esbuild'
     },
-    server: {
-      open: 'dist/tarmactechnologies.user.js'
-    },
     plugins: [
       monkey({
         entry: 'src/index.js',
@@ -27,6 +24,10 @@ export default defineConfig((config) => {
             'https://agoa.tarmactechnologies.com/*',
             'https://dev-agoa.tarmactechnologies.com/*'
           ]
+        },
+        server: {
+          open: true,
+          prefix: false
         },
         build: {
           fileName: 'tarmactechnologies.user.js',
