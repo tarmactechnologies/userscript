@@ -1,6 +1,7 @@
 import adminCompanies from './admin/companies';
 import adminPartnerTaskRules from './admin/partnertaskrules';
-import adminUsers from './admin/users';
+import adminUserCBGs from './admin/user_cbgs';
+import adminUsersExcel from './admin/user_excel';
 import agoa from './agoa/turnarounds';
 import backofficeCriticalPath from './backoffice/critical_path';
 import backofficeUsers from './backoffice/users';
@@ -28,7 +29,11 @@ import backofficeUsers from './backoffice/users';
 
   if (/^(?:dev-)?admin.tarmactechnologies.com$/.test(hostname)) {
     if (/^\/users\/customuser\/[0-9]+\/change/.test(pathname)) {
-      adminUsers();
+      adminUserCBGs();
+    }
+
+    if (/^\/users\/customuser\//.test(pathname)) {
+      adminUsersExcel();
     }
 
     if (/^\/tarmac\/company\/(?:[0-9]+\/change|add)/.test(pathname)) {
