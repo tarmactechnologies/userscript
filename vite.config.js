@@ -1,10 +1,10 @@
-import {defineConfig} from 'vite'
+import {defineConfig} from 'vite';
 import monkey from 'vite-plugin-monkey';
 
-export default defineConfig((config) => {
+export default defineConfig(config => {
   return {
     build: {
-      minify: 'esbuild'
+      minify: 'esbuild',
     },
     plugins: [
       monkey({
@@ -14,26 +14,29 @@ export default defineConfig((config) => {
           description: 'Miscellaneous Tarmac Technologies Utilities',
           namespace: null,
           icon: 'https://static-tarmac.s3.amazonaws.com/img/favicon.ico',
-          downloadURL: 'https://github.com/tarmactechnologies/userscript/raw/main/dist/tarmactechnologies.user.js',
-          updateURL: 'https://github.com/tarmactechnologies/userscript/raw/main/dist/tarmactechnologies.meta.js',
+          downloadURL:
+            'https://github.com/tarmactechnologies/userscript/raw/main/dist/tarmactechnologies.user.js',
+          updateURL:
+            'https://github.com/tarmactechnologies/userscript/raw/main/dist/tarmactechnologies.meta.js',
           match: [
             'https://backoffice.tarmactechnologies.com/*',
             'https://dev-backoffice.tarmactechnologies.com/*',
             'https://admin.tarmactechnologies.com/*',
             'https://dev-admin.tarmactechnologies.com/*',
             'https://agoa.tarmactechnologies.com/*',
-            'https://dev-agoa.tarmactechnologies.com/*'
-          ]
+            'https://dev-agoa.tarmactechnologies.com/*',
+            'https://staging-agoa.tarmactechnologies.com/*',
+          ],
         },
         server: {
           open: true,
-          prefix: false
+          prefix: false,
         },
         build: {
           fileName: 'tarmactechnologies.user.js',
-          metaFileName: 'tarmactechnologies.meta.js'
-        }
-      })
-    ]
-  }
-})
+          metaFileName: 'tarmactechnologies.meta.js',
+        },
+      }),
+    ],
+  };
+});

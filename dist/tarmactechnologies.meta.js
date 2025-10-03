@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tarmac Technologies
-// @version      3.2.0
+// @version      3.2.1
 // @author       Tarmac Technologies
 // @description  Miscellaneous Tarmac Technologies Utilities
 // @icon         https://static-tarmac.s3.amazonaws.com/img/favicon.ico
@@ -12,4 +12,5 @@
 // @match        https://dev-admin.tarmactechnologies.com/*
 // @match        https://agoa.tarmactechnologies.com/*
 // @match        https://dev-agoa.tarmactechnologies.com/*
+// @match        https://staging-agoa.tarmactechnologies.com/*
 // ==/UserScript==

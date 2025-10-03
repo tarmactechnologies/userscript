@@ -18,12 +18,18 @@ export default function processAgoa(subdomain = 'admin') {
       }
     });
 
-    Array.from(document.querySelectorAll('.station-selected-turnarounds__turnarounds-details__turnaround-details .ui-badge')).forEach(badge => {
+    Array.from(
+      document.querySelectorAll(
+        '.station-selected-turnarounds__turnarounds-details__turnaround-details .ui-badge'
+      )
+    ).forEach(badge => {
       if (!badge.dataset.processed) {
         const id = badge.id.match(/turnaround-details-badge-([0-9]+)/)[1];
         badge.addEventListener('click', () => {
-          window.open(`https://metabase.tarmactechnologies.com/dashboard/7-turnaround-deepdive?turnaround_id=${id}`);
-        })
+          window.open(
+            `https://metabase.tarmactechnologies.com/dashboard/7-turnaround-deepdive?turnaround_id=${id}`
+          );
+        });
 
         badge.style = 'cursor: pointer; user-select: none;';
         badge.dataset.processed = true;

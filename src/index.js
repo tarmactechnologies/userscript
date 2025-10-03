@@ -45,7 +45,7 @@ import backofficeUsers from './backoffice/users';
     }
   }
 
-  if (/(?:dev-)?agoa.tarmactechnologies.com/.test(hostname)) {
+  if (/(?:dev-|staging-)?agoa.tarmactechnologies.com/.test(hostname)) {
     if (/^\/(?:agoa|station)?$/.test(pathname)) {
       agoa(/^dev-agoa/.test(hostname) ? 'dev-admin' : 'admin');
     }
