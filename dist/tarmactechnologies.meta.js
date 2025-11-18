@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tarmac Technologies
-// @version      3.2.1
+// @version      3.2.2
 // @author       Tarmac Technologies
 // @description  Miscellaneous Tarmac Technologies Utilities
 // @icon         https://static-tarmac.s3.amazonaws.com/img/favicon.ico

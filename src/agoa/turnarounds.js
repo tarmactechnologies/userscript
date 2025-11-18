@@ -1,11 +1,13 @@
 export default function processAgoa(subdomain = 'admin') {
   function addClickHandlers() {
     Array.from(
-      document.querySelectorAll('[id^="TurnaroundPathAirportsHubActual"]')
+      document.querySelectorAll(
+        '.turnaround-path-and-timings__path__airports__hub__actual'
+      )
     ).forEach(turnaround => {
       if (!turnaround.dataset.processed) {
         const id = turnaround.id.match(
-          /TurnaroundPathAirportsHubActual([0-9]+)/
+          /turnaround-path-airports-hub-actual-([0-9]+)/
         )[1];
         turnaround.addEventListener('click', () => {
           window.open(
